@@ -1,0 +1,419 @@
+{
+	"info": {
+		"_postman_id": "1c7bf607-7b29-428e-b191-a9e9deff089e",
+		"name": "TrainTicketBooking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15955001"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"username\": \"JohnDoe\",\r\n    \"email\": \"john.doe@example.com\",\r\n    \"password\": \"JOhn@123\",\r\n    \"passwordInText\": \"JOhn@123\",\r\n    \"gender\": \"Male\",\r\n    \"dateOfBirth\": \"12/10/2023\",\r\n    \"phoneNo\": 9898\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/users/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"JohnDoe\",\r\n    \"email\":\"john.doe@example.com\",\r\n    \"password\":\"JOhn@123\",\r\n    \"gender\":\"Male\",\r\n    \"dateOfBirth\":\"12/12/2023\",\r\n    \"phoneNo\":9898\r\n\r\n}\r\n"
+						},
+						"url": {
+							"raw": "localhost:8080/users/health",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "booking",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n\r\n   {\r\n        \"name\": \"hksdfsgdsgjhkj\",\r\n        \"age\": 31,\r\n        \"gender\": \"MALE\",\r\n        \"coachType\": \"SLEEPER\"\r\n  }\r\n  ]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/users/booking/trainNo/16161/from/Agra/to/Delhi/date/2025-07-29T14:30:00",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"booking",
+								"trainNo",
+								"16161",
+								"from",
+								"Agra",
+								"to",
+								"Delhi",
+								"date",
+								"2025-07-29T14:30:00"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TicketBooking",
+			"item": []
+		},
+		{
+			"name": "Trains",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"trainName\":\"Chattisgarh Express\",\r\n    \"trainNumber\": 21211,\r\n    \"trainType\":\"EXPRESS\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/trains/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"trains",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"routeName\": \"Bihar-Delhi\",\r\n    \"isActive\": true,\r\n    \"validFrom\": \"2023-01-01\",\r\n    \"validTo\": \"2025-01-01\",\r\n    \"train\": {\r\n        \"trainId\": 11\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/trains",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"trains"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findByTrainNumber",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stations",
+			"item": [
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/stations",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"stations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"stationCode\": \"PNBE\",\r\n    \"name\": \"Patna Junction Railway Station\",\r\n    \"city\": \"Patna\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/stations/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"stations",
+								"add"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RouteStops",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"route\": {\r\n        \"routeId\": 103\r\n    },\r\n    \"station\": {\r\n        \"stationId\": 4\r\n    },\r\n    \"sequenceNumber\": 4,\r\n    \"arrivalTime\": \"21:00:00\",\r\n    \"departureTime\": \"21:30:00\",\r\n    \"haltDuration\": 30,\r\n    \"distanceFromOrigin\": 230\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/stops/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"stops",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/stops",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"stops"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Route",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"routeName\": \"Bihar-Delhi\",\r\n    \"isActive\": true,\r\n    \"validFrom\": \"2023-01-01\",\r\n    \"validTo\": \"2025-01-01\",\r\n    \"train\": {\r\n        \"trainId\": 11\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/routes/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"routes",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/routes",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"routes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Coaches",
+			"item": [
+				{
+					"name": "addCoach",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"coachNumber\": \"S6\",\r\n    \"coachType\": \"SLEEPER\",\r\n    \"totalSeats\":80,\r\n    \"availableSeats\": 0,\r\n    \"train\": {\r\n        \"trainId\": 2\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/coaches/add",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"coaches",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllCoaches",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"routeName\": \"Bihar-Delhi\",\r\n    \"isActive\": true,\r\n    \"validFrom\": \"2023-01-01\",\r\n    \"validTo\": \"2025-01-01\",\r\n    \"train\": {\r\n        \"trainId\": 11\r\n    }\r\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/coaches",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"coaches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "seats",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
